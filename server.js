@@ -32,20 +32,20 @@ var server = http.createServer(function(request, response){
 
 
   console.log('HTTP 路径为 \n' + path)
-  if(path == '/index'){
+  if(path == '/'){
     response.setHeader('Content-Type', 'text/html; charset=utf-8')
     response.write('<!DOCTYPE>\n<html>'  + 
-      '<head><link rel="stylesheet" href="/style">' +
+      '<head><link rel="stylesheet" href="/style.css">' +
       '</head><body>'  +
       '<h1>海内存知己，天涯若比邻。</h1>' +
-      '<script src="/script"></script>' +
+      '<script src="/main.js"></script>' +
       '</body></html>')
     response.end()
-  }else if(path == '/style'){
+  }else if(path == '/style.css'){
     response.setHeader('Content-Type', 'text/css; charset=utf-8')
     response.write('body{background-color: #ddd;}h1{color: purple;}')
     response.end()
-  }else if(path == '/script'){
+  }else if(path == '/main.js'){
     response.setHeader('Content-Type', 'text/javascript; charset=utf-8')
     response.write('alert("这是JS执行的")')
     response.end()
